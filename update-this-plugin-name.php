@@ -45,5 +45,5 @@ $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 //$myUpdateChecker->setBranch('stable-branch-name');
 
 //______________________________________________________________________________
-/* PluginName End */
+/* Stop jQuery Migrate Emails End */
 ?>
