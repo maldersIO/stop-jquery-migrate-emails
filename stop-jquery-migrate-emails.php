@@ -15,10 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /* Stop jQuery Migrate Emails Start */
 //______________________________________________________________________________
+
+if ( is_plugin_active( 'enable-jquery-migrate-helper/enable-jquery-migrate-helper.php' ) ) {
+    //plugin is activated
+
 add_action('init', function() {
 	$timestamp = wp_next_scheduled( 'enable_jquery_migrate_helper_notification' );
 	wp_unschedule_event($timestamp, 'enable_jquery_migrate_helper_notification');
-}, 100); 
+}, 100);
+	
+}
 
 //______________________________________________________________________________
 // All About Updates
