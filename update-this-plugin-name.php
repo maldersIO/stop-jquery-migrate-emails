@@ -1,8 +1,8 @@
 <?php
 /**
-* Plugin Name: Add PluginName
-* Plugin URI: https://github.com/FreshyMichael/Plugin-Starter
-* Description: Add a Description
+* Plugin Name: Stop jQuery Migrate Emails
+* Plugin URI: https://github.com/FreshyMichael/stop-jquery-migrate-emails
+* Description: full stop jQuery Migrate Helper emails notifications
 * Version: 1.0.0
 * Author: FreshySites
 * Author URI: https://freshysites.com/
@@ -13,9 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-/* PluginName Start */
+/* Stop jQuery Migrate Emails Start */
 //______________________________________________________________________________
-
+add_action('init', function() {
+	$timestamp = wp_next_scheduled( 'enable_jquery_migrate_helper_notification' );
+	wp_unschedule_event($timestamp, 'enable_jquery_migrate_helper_notification');
+}, 100); 
 
 //______________________________________________________________________________
 // All About Updates
@@ -24,10 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 // ***IMPORTANT*** Update this path to New Github Repository Master Branch Path
-	'https://github.com/FreshyMichael/Plugin-Starter',
+	'https://github.com/FreshyMichael/stop-jquery-migrate-emails',
 	__FILE__,
 // ***IMPORTANT*** Update this to New Repository Master Branch Path
-	'Plugin-Starter'
+	'stop-jquery-migrate-emails'
 );
 //Enable Releases
 $myUpdateChecker->getVcsApi()->enableReleaseAssets();
