@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Stop jQuery Migrate Emails
 * Plugin URI: https://github.com/FreshyMichael/stop-jquery-migrate-emails
-* Description: full stop jQuery Migrate Helper emails notifications
+* Description: Say goodbye to Enable jQuery Migrate Helper weekly status email notifications.
 * Version: 1.0.0
 * Author: FreshySites
 * Author URI: https://freshysites.com/
@@ -14,10 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /* Stop jQuery Migrate Emails Start */
-//______________________________________________________________________________
 
 if ( is_plugin_active( 'enable-jquery-migrate-helper/enable-jquery-migrate-helper.php' ) ) {
-    //plugin is activated
+    //plugin is activate
 
 add_action('init', function() {
 	$timestamp = wp_next_scheduled( 'enable_jquery_migrate_helper_notification' );
@@ -26,30 +25,5 @@ add_action('init', function() {
 	
 }
 
-//______________________________________________________________________________
-// All About Updates
-
-//  Begin Version Control | Auto Update Checker
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-// ***IMPORTANT*** Update this path to New Github Repository Master Branch Path
-	'https://github.com/FreshyMichael/stop-jquery-migrate-emails',
-	__FILE__,
-// ***IMPORTANT*** Update this to New Repository Master Branch Path
-	'stop-jquery-migrate-emails'
-);
-//Enable Releases
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
-//Optional: If you're using a private repository, specify the access token like this:
-//
-//
-//Future Update Note: Comment in these sections and add token and branch information once private git established
-//
-//
-//$myUpdateChecker->setAuthentication('your-token-here');
-//Optional: Set the branch that contains the stable release.
-//$myUpdateChecker->setBranch('stable-branch-name');
-
-//______________________________________________________________________________
 /* Stop jQuery Migrate Emails End */
 ?>
