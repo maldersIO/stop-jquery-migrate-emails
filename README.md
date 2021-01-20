@@ -1,3 +1,3 @@
-#Stop jQuery Migrate Helper Emails
-<h3>Usage</h3>
+Stop jQuery Migrate Helper Emails
+#Usage
 <p>Install & Activate</p>
