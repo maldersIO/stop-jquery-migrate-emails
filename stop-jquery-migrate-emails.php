@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* Stop jQuery Migrate Emails Start */
 
 if ( is_plugin_active( 'enable-jquery-migrate-helper/enable-jquery-migrate-helper.php' ) ) {
-    //plugin is activate
+    //Enable jQuery Migrate Helper plugin is active
 
 add_action('init', function() {
 	$timestamp = wp_next_scheduled( 'enable_jquery_migrate_helper_notification' );
