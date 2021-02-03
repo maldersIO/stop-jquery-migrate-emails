@@ -28,7 +28,7 @@ add_action('init', function() {
 }
 }
 
-add_action('admin_init' , 'stop_jquery_migrate_emails);
+add_action('admin_init' , 'stop_jquery_migrate_emails');
 
 /* Stop jQuery Migrate Emails End */
 ?>
